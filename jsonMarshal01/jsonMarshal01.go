@@ -40,4 +40,12 @@ func main() {
 	fmt.Println(marshalUsers)
 	stringMarshalUsers := string(marshalUsers)
 	fmt.Println(stringMarshalUsers)
+
+	// Unmarshaling
+	var unmarshalUsers []User
+	err = json.Unmarshal(marshalUsers, &unmarshalUsers)
+	fmt.Println("Unmarshal Users:", unmarshalUsers)
+	for _, value := range unmarshalUsers {
+		fmt.Println(value)
+	}
 }
